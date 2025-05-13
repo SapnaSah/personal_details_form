@@ -1,32 +1,56 @@
+:root {
+    --primary-color: #2196F3;
+    --primary-hover: #1976D2;
+    --error-color: #f44336;
+    --success-color: #4CAF50;
+    --text-color: #333;
+    --background-color: #f8f9fa;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
+    line-height: 1.6;
 }
 
 .container {
     max-width: 600px;
-    margin: 20px auto;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .personal-details-form {
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.personal-details-form:hover {
+    transform: translateY(-2px);
 }
 
 fieldset {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 20px;
+    border: none;
+    padding: 0;
+    margin-bottom: 30px;
 }
 
 legend {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.form-description {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 0.95em;
 }
 
 .form-group {
@@ -42,14 +66,29 @@ input,
 select,
 textarea {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
 }
 
 select {
-    height: 34px;
+    height: 45px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
 }
 
 .radio-group {
@@ -61,15 +100,77 @@ select {
 }
 
 button {
-    background-color: #4caf50;
+    background-color: var(--primary-color);
     color: #fff;
-    padding: 10px 15px;
+    padding: 14px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.success-message {
+    display: block;
+    color: var(--success-color);
+    text-align: center;
+    padding: 15px 20px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 1px solid var(--success-color);
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: var(--error-color);
+}
+
+.form-group.error .error-message {
+    display: block;
 }
