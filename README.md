@@ -2,6 +2,17 @@
 
 A modern, responsive web form application with real-time validation and MySQL database integration. Built using HTML, CSS, JavaScript, and Python.
 
+## Screenshots
+
+### Form Input View
+![ss1](https://github.com/user-attachments/assets/aea0baa1-f35e-4e0a-b778-e9a58f8880e3)
+
+### User Enrty View
+![ss2](https://github.com/user-attachments/assets/edb04348-c81c-4aa4-9859-3c3cd0e381d8)
+
+### Registration Success View
+![ss3](https://github.com/user-attachments/assets/6739701d-5b98-4a2c-9db0-357ea54d4c31)
+
 ## Features
 
 - Clean and modern UI design
